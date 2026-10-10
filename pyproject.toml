@@ -1,0 +1,38 @@
+[project]
+name = "bhashalm"
+version = "0.1.0"
+description = "Small monolingual GPT-style language models for Hindi and Nepali, built from first principles in PyTorch."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# Core deps only; heavier ones (torch, sentencepiece, sacrebleu, ...) are added in the phase that needs them.
+dependencies = [
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "pre-commit>=3.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bhashalm"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

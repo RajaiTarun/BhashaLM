@@ -1,0 +1,19 @@
+# data & artifacts (hosted on HF Hub / Drive, never in git)
+data/
+checkpoints/
+*.bin
+*.pt
+*.zip
+wandb/
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Personal notes / docs
+Friends_README.md
+concepts.md
+plan.md
+LMA_Individual_Project_v1.pdf
